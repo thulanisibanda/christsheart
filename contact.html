@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" />
+    <script src="js/mobile.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="navigation">
+          <span id="mobile-navigation">&nbsp;</span>
+          <a href="index.html" class="logo"
+            ><img src="images/logo.png" alt=""
+          /></a>
+          <ul id="menu">
+            <li>
+              <a href="index.html">Home |</a>
+            </li>
+            <li>
+              <a href="about.html">About Us |</a>
+            </li>
+            <li>
+              <a href="whatson.html">What's On? |</a>
+            </li>
+            <li>
+              <a href="discipleshipcollege.html">Discipleship College |</a>
+            </li>
+            <li>
+              <a href="giving.html">Giving |</a>
+            </li>
+            <li class="selected">
+              <a href="contact.html">Contact |</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.equip4success.org/">Equip4Success</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="body" >
+        <div style="padding-bottom:30px">
+          <h1>Contact us</h1>
+        </div>
+        <div id="contactPage" style="background: none;padding:0px 0px 0px 0px">
+        <div>
+          <h2 style="color:white; padding-left:20px; font-family:Arial, Helvetica, sans-serif">ADDRESS</h2>
+          <p>
+            Christ’s Heart Church<br />Richardson Hall<br />20 Lawnswood Road
+            <br />Wordsley<br />
+            DY8 5PG <br>
+            Parking:		At the Mere Centre or public car park <br>
+          NUMBERS: 07880507433<br>
+          EMAIL: keithpoole@sky.com</p>
+        </div>
+        <div>
+          <h2 id="sendMessageH2">Send us a message...</h2>
+          <form id="jquery_form" style="display: flex;flex-direction: column; align-items: center;">
+            <input required type="text" name="name" placeholder="Name" />
+            <input type="email" name="email" placeholder="Email (Optional)"/>
+            <input type="number" name="phoneNumber" placeholder="Phone Number (Optional)" />
+            <input required type="text" name="subject" placeholder="Subject" />
+            <textarea required name="text" placeholder="Message" rows="5"></textarea>
+            <input type="submit" name="send" value="Send" />
+        </form>
+        <span id="sendComplete" style="color: white; font-family:Arial"></span>
+        </div>
+      </div>
+      </div>
+      <div id="footer">
+        <div>
+          <div
+            class="social">
+            <p>Christ's Heart Ministries UK</p>
+            <a
+              href="https://www.facebook.com/christsheartministriesuk"
+              target="_blank"
+            >
+              <img
+                class="socialIcon"
+                src="images/facebbook.png"
+                style="width: 80px"
+            /></a>
+            <a
+              href="https://www.instagram.com/christsheartministriesuk"
+              target="_blank"
+            >
+              <img
+                class="socialIcon"
+                src="images/intagram.png"
+                style="width: 110px"
+            /></a>
+            <a
+              href="https://www.youtube.com/channel/UCUpZaHaSVTZ_RvCiD59FNEA"
+              target="_blank"
+            >
+              <img
+                class="socialIcon"
+                src="images/youtube.png"
+                style="width: 80px"
+            /></a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  $("#jquery_form").submit(function( event ) {
+      event.preventDefault();
+      console.log("complete")
+      send()
+  });
+  //update this with your $form selector
+  var form_id = "jquery_form";
+  var sendButton = $("#" + form_id + " [name='send']");
+
+  var data = {
+      "access_token": "3hfsl0r7j7scik3qlfu9r778" // sent after you sign up
+  };
+
+
+  function send() {
+      sendButton.val('Sending…');
+      sendButton.prop('disabled',true);
+
+      var subject = $("#" + form_id + " [name='subject']").val();
+      var message = 
+      "Name: " + $("#" + form_id + " [name='name']").val() + "........." +
+      "Email: " + $("#" + form_id + " [name='email']").val() + "......." +
+      "Phone Number: " + $("#" + form_id + " [name='phoneNumber']").val() + "......" +
+      "Message: " + $("#" + form_id + " [name='text']").val();
+      data['subject'] = subject;
+      data['text'] = message;
+
+      $.post('https://postmail.invotes.com/send',
+          data,
+          () => {
+            $("#sendComplete").text("Message sent. Thank you")
+            sendButton.val('Sent');
+            $("#" + form_id + " [name='subject']").prop('disabled',true);
+            $("#" + form_id + " [name='text']").prop('disabled',true);
+            $("#" + form_id + " [name='email']").prop('disabled',true);
+            $("#" + form_id + " [name='phoneNumber']").prop('disabled',true);
+            $("#" + form_id + " [name='name']").prop('disabled',true);
+          }
+      ).fail(() => {
+        $("#sendComplete").text("Something has gone wrong, Please send email directly to keithpoole@sky.com")
+        sendButton.val('Error');
+      });
+
+      //return false;
+  }
+
+</script>
