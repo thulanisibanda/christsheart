@@ -1,5 +1,24 @@
 /* Website template by freewebsitetemplates.com */
 @media only screen and (min-width: 320px) and (max-width: 568px) {
+  .gallery-image {
+    flex-basis: 30%;
+    flex: 1;
+    width: 90vw;
+    aspect-ratio: 1/1.2;
+    /* aspect-ratio: auto; */
+    object-fit: cover;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+
+  .whats-on-image {
+    flex-basis: 50%;
+    flex: 1;
+    width: 90vw;
+    aspect-ratio: auto;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+  }
   .socialIcon {
     margin: 10px;
     border-radius: 10px;
