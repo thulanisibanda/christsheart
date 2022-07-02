@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" />
     <script src="js/mobile.js" type="text/javascript"></script>
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <div id="page">
@@ -50,10 +50,17 @@
       </div>
       <hr class="hideMobile" />
     </div>
-    <div
-      class="embedsocial-hashtag"
-      data-ref="277973605943f72410b9ee0487e882761613dce4"
-    ></div>
+    <div id="body" class="home">
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-evenly;
+        "
+        class="whatson"
+      ></div>
+    </div>
     <div id="footer">
       <div>
         <div class="social" style="display: flex; align-items: center">
@@ -212,14 +219,34 @@
 </html>
 
 <script>
-  (function (d, s, id) {
-    var js;
-    if (d.getElementById(id)) {
-      return;
+  // (function (d, s, id) {
+  //   var js;
+  //   if (d.getElementById(id)) {
+  //     return;
+  //   }
+  //   js = d.createElement(s);
+  //   js.id = id;
+  //   js.src = "https://embedsocial.com/cdn/ht.js";
+  //   d.getElementsByTagName("head")[0].appendChild(js);
+  // })(document, "script", "EmbedSocialHashtagScript");
+
+  $(document).ready(function () {
+    numberOfImages = 6;
+    console.log("ready!");
+    for (let i = 1; i < numberOfImages; i++) {
+      $(".whatson").append(`<a target="_blank" href="images/whatson/${i}.jpg">
+            <img src="images/whatson/${i}.jpg" />
+          </a>`);
     }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://embedsocial.com/cdn/ht.js";
-    d.getElementsByTagName("head")[0].appendChild(js);
-  })(document, "script", "EmbedSocialHashtagScript");
+  });
 </script>
+
+<style>
+  img {
+    flex-basis: 50%;
+    flex: 1;
+    width: 700px;
+    aspect-ratio: 1.8/1;
+    /* object-fit: cover; */
+  }
+</style>
