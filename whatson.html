@@ -218,30 +218,19 @@
 </html>
 
 <script>
-  // (function (d, s, id) {
-  //   var js;
-  //   if (d.getElementById(id)) {
-  //     return;
-  //   }
-  //   js = d.createElement(s);
-  //   js.id = id;
-  //   js.src = "https://embedsocial.com/cdn/ht.js";
-  //   d.getElementsByTagName("head")[0].appendChild(js);
-  // })(document, "script", "EmbedSocialHashtagScript");
-
   $(document).ready(function () {
     numberOfImages = 8;
     console.log("ready!");
     for (let i = 1; i <= numberOfImages; i++) {
       $(".whatson").append(`<a target="_blank" href="images/whatson/${i}.jpg">
-            <img src="images/whatson/${i}.jpg" />
+            <img src="images/whatson/${i}.jpg" class="whats-on-image" />
           </a>`);
     }
   });
 </script>
 
 <style>
-  img {
+  .whats-on-image {
     flex-basis: 50%;
     flex: 1;
     width: 700px;
