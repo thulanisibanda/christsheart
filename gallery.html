@@ -61,7 +61,11 @@
         <div
           style="display: flex; gap: 10px; flex-wrap: wrap; flex-direction: row"
           class="gallery"
-        ></div>
+        >
+          <a target="_blank" href="images/leaflet.jpeg">
+            <img src="images/leaflet.jpeg" />
+          </a>
+        </div>
       </div>
       <div id="footer">
         <div>
@@ -236,9 +240,12 @@
     numberOfImages = 22;
     console.log("ready!");
     for (let i = 1; i < numberOfImages; i++) {
-      $(".gallery").append(`<a target="_blank" href="/images/gallery/${i}.jpg">
-            <img src="./images/gallery/${i}.jpg" />
+      $(".gallery").append(`<a target="_blank" href="images/gallery/${i}.jpg">
+            <img src="images/gallery/${i}.jpg" />
           </a>`);
     }
+    $(".gallery").append(`<a target="_blank" href="/images/leaflet.jpeg">
+            <img src="images/leaflet.jpeg" />
+          </a>`);
   });
 </script>
