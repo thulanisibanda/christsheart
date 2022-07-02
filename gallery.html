@@ -65,6 +65,7 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: space-evenly;
+            margin-top: 10px;
           "
           class="gallery"
         ></div>
@@ -234,6 +235,8 @@
     width: 400px;
     aspect-ratio: 1/1.2;
     object-fit: cover;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
   }
 </style>
 
@@ -241,7 +244,7 @@
   $(document).ready(function () {
     numberOfImages = 22;
     console.log("ready!");
-    for (let i = 1; i < numberOfImages; i++) {
+    for (let i = 1; i <= numberOfImages; i++) {
       $(".gallery").append(`<a target="_blank" href="images/gallery/${i}.jpg">
             <img src="images/gallery/${i}.jpg" />
           </a>`);

@@ -231,9 +231,9 @@
   // })(document, "script", "EmbedSocialHashtagScript");
 
   $(document).ready(function () {
-    numberOfImages = 6;
+    numberOfImages = 8;
     console.log("ready!");
-    for (let i = 1; i < numberOfImages; i++) {
+    for (let i = 1; i <= numberOfImages; i++) {
       $(".whatson").append(`<a target="_blank" href="images/whatson/${i}.jpg">
             <img src="images/whatson/${i}.jpg" />
           </a>`);
@@ -247,6 +247,7 @@
     flex: 1;
     width: 700px;
     aspect-ratio: 1.8/1;
-    /* object-fit: cover; */
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
   }
 </style>
