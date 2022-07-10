@@ -235,7 +235,6 @@
 <script>
   $(document).ready(function () {
     numberOfImages = 28;
-    console.log("ready!");
     for (let i = 1; i <= numberOfImages; i++) {
       $(".gallery").append(
         `<img src="images/gallery/${i}.jpg" class="gallery-image hover-shadow cursor" onclick="openModal();currentSlide(${i})" />`
