@@ -232,7 +232,7 @@
   $(document).ready(function () {
     numberOfImages = 28;
     for (let i = 1; i <= numberOfImages; i++) {
-      $(".gallery").append(`<a target="_blank" href="images/gallery/${i}.jpg">
+      $(".gallery").prepend(`<a target="_blank" href="images/gallery/${i}.jpg">
             <img src="images/gallery/${i}.jpg" class="gallery-image" />
           </a>`);
     }

@@ -221,7 +221,7 @@
   $(document).ready(function () {
     numberOfImages = 8;
     for (let i = 1; i <= numberOfImages; i++) {
-      $(".whatson").append(`<a target="_blank" href="images/whatson/${i}.jpg">
+      $(".whatson").prepend(`<a target="_blank" href="images/whatson/${i}.jpg">
             <img src="images/whatson/${i}.jpg" class="whats-on-image" />
           </a>`);
     }
